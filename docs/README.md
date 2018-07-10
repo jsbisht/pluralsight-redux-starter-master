@@ -47,7 +47,7 @@ Aka Smart or Stateful or Controller View component.
 
 ### Presentation components
 Aka Dumb or Stateless or View component.
-
+ 
 * Are nearly all markup.
 * They shouldnt have any logic inside.
 * Receive data and actions via props.
