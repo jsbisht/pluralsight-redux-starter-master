@@ -13,7 +13,9 @@
     * Actions
     * Store 
     * Reducers
-
+        * Immutability
+        * Using `Object.assign()`
+        * Why Immutability
 
 ## Types of React Components
 
@@ -128,6 +130,59 @@ While reducers are responsible for state change.
 #### Immutability
 To change state, return a new object.
 
+Types already immutable:
+
+* Number
+* String
+* Boolean
+* undefined
+* null
+
+Types that are mutable:
+
+* Objects
+* Arrays
+* Functions
+
+Immutability suggests to return new object instead of doing direct value update.
+
+```js
+state.role = 'admin';
+return state;
+```
+
+Instead of above return the object as follows:
+
+```js
+state = {
+  name: "jagdeep bisht",
+  role: "admin"
+}
+```
+
+#### Using `Object.assign()`
+
+##### Syntax
+
+```js
+Object.assign(target, ...sources)
+```
+
+##### Example
+
+```js
+Object.assign({}, state, {role: "author" });
+```
+
+#### Why Immutability
+
+* Clarity - We know where and how the state was changed
+* Performance - Only reference check is required to identify change
+* Debugging
+    * Time travel debugging support
+    * Undo/Redo
+    * Turn off individual actions
+    * Play interactions back
 
 # References
 https://medium.freecodecamp.org/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8
