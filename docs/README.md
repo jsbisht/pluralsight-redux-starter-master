@@ -5,6 +5,15 @@
    * When to Use Class Components
    * When to use Stateless Components
 * Container vs Presentation Components
+* When do I Need Redux
+* Flux vs Redux
+   * Simlarities
+   * Differences
+* Redux Flow
+   * Actions
+   * Store 
+   * Reducers
+
 
 ## Types of React Components
 
@@ -52,6 +61,48 @@ Aka Dumb or Stateless or View component.
 * They shouldnt have any logic inside.
 * Receive data and actions via props.
 * Doesnt know about Redux
+
+## When do I Need Redux
+
+* Complex data flows
+* Interactions between components
+* When application has non-hierarchical data
+* Using same data in multiple places
+* Redux becomes really useful when the app has increasing number of actions
+
+## Flux vs Redux
+
+### Simlarities
+
+* Unidirectional flow - All data changes flow in one direction
+* Actions - Define action that change state
+* Stores - Flux has single store while Redux has multiple
+
+### Differences
+
+* Redux introduces reducers that are pure functions
+* Flux stores contain state and change logic. Redux store and change logic are seperate.
+* Flux supports having multiple stores. Redux has only one store.
+* Flux stores are flat and disconnected. Redux has single store with hierarchical reducers.
+* Flux has actions, dispatchers and stores. Flux uses a singleton dispatcher. Redux doesn't have dispatcher. It relies on pure functions called reducers.
+* Flux requires components to subscribe to store. Redux connects components to store automatically. This is done using connect method.
+* State is mutable in Flux. Redux the state is immutable.
+
+## Redux Flow
+![Redux Flow](img/redux-flow.png)
+
+### Actions
+Actions happening in the application are  plain objects. And pure functions are recommended to create these objects, which are called Action Creators.
+
+Typically action creator function name is same as action type.
+
+![Redux Action Creator](img/redux-action-creator.png)
+
+Any value can be passed through an action.
+
+Anything that doesnt serialize to JSON is not supported. Eg. functions or promises.
+
+When an action is dispatched a change in store is triggered.
 
 # References
 https://medium.freecodecamp.org/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8
