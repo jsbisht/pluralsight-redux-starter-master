@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
-class AboutPage extends React.Component {
+class CoursesPage extends React.Component {
     render() {
         return (
           <div className="jumbotron">
-                <h1>About Page</h1>
+                <h1>Courses Page</h1>
                 <p>Very reactive project here.</p>
             </div>
         );
     }
 }
 
-export default AboutPage;
+export default CoursesPage;
