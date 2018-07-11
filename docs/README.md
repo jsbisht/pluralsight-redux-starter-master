@@ -1,18 +1,18 @@
 # Index
 
 * Types of React Components
-   * Stateless Functional Components Benefits
-   * When to Use Class Components
-   * When to use Stateless Components
+    * Stateless Functional Components Benefits
+    * When to Use Class Components
+    * When to use Stateless Components
 * Container vs Presentation Components
 * When do I Need Redux
 * Flux vs Redux
-   * Simlarities
-   * Differences
+    * Simlarities
+    * Differences
 * Redux Flow
-   * Actions
-   * Store 
-   * Reducers
+    * Actions
+    * Store 
+    * Reducers
 
 
 ## Types of React Components
@@ -103,6 +103,31 @@ Any value can be passed through an action.
 Anything that doesnt serialize to JSON is not supported. Eg. functions or promises.
 
 When an action is dispatched a change in store is triggered.
+
+### Store
+Redux store follows single responsibility principle.
+
+A store is created in the application entry point.
+
+```js
+let store = createStore(reducers);
+```
+
+Redux store api:
+
+![Redux store api](img/redux-store-api.png)
+
+Reason for padlock icon on the store:
+
+> A store is immutable.
+
+While reducers are responsible for state change.
+
+### Reducers
+
+#### Immutability
+To change state, return a new object.
+
 
 # References
 https://medium.freecodecamp.org/why-i-left-gulp-and-grunt-for-npm-scripts-3d6853dd22b8
