@@ -1,3 +1,7 @@
 nav {
   padding-to: 20px;
 }
+
+.active {
+  color: orange;
+}
